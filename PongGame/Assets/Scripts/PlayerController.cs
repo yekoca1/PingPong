@@ -12,12 +12,11 @@ public class PlayerController : MonoBehaviour
     {
         if(isPlayer1)
         {
-            rb.velocity = Vector2.up * Input.GetAxisRaw("Vertical") * speed;
+            rb.velocity = Vector2.up*Input.GetAxisRaw("Vertical")*speed;
         }
-
         else
         {
-            rb.velocity = Vector2.up * Input.GetAxisRaw("Vertical2") * speed;
+            rb.velocity = Vector2.up*Input.GetAxisRaw("Vertical2")*speed;
         }
     }
 }
