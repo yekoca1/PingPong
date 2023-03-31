@@ -14,7 +14,7 @@ public class BallController : MonoBehaviour
     public TextMeshProUGUI Win1;
     public TextMeshProUGUI Win2;
     void Start()
-    {
+    { 
         Win1 = GameObject.Find("Win1").GetComponent<TextMeshProUGUI>();
         Win2 = GameObject.Find("Win2").GetComponent<TextMeshProUGUI>();
 
@@ -33,18 +33,20 @@ public class BallController : MonoBehaviour
         
     }
 
-    public void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Kale1"))
+        if(collision.gameObject.tag =="Kale1")
         {
             Win1.gameObject.SetActive(true);
+            rb.velocity = Vector2.zero;
             speed = 0;
         }
 
-        if(collision.gameObject.CompareTag("Kale2"))
+        if(collision.gameObject.tag =="Kale2")
         {
             Win2.gameObject.SetActive(true);
-            speed = 0;        
+            rb.velocity = Vector2.zero;
+            speed = 0;
         }
     }
-} //Top kalelere çarptığında puan ekle ve göster
+} 
